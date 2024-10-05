@@ -1,50 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>macOS Sequoia Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kyle's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Menu Bar -->
+  <!-- macOS-like Top Bar -->
+  <div class="top-bar">
     <div class="menu-bar">
-        <div class="menu-item bold"><a href="index.html">Home</a></div>
-        <div class="menu-item"><a href="about.html">About</a></div>
-        <div class="menu-item"><a href="projects.html">Projects</a></div>
-        <div class="menu-item"><a href="https://GitHub.com/KyleGinnard">GitHub</a></div>
+      <div class="menu-item bold"><a href="index.html">Home</a></div>
+      <div class="menu-item"><a href="about.html">About</a></div>
+      <div class="menu-item"><a href="projects.html">Projects</a></div>
     </div>
+  </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <div class="window">
-            <div class="window-header">
-                <div class="nav-buttons">
-                    <span class="nav-button red"></span>
-                    <span class="nav-button yellow"></span>
-                    <span class="nav-button green"></span>
-                </div>
-            </div>
-            <div class="window-body">
-                <h1>Welcome to my Portfolio</h1>
-                <p>This is a macOS Sequoia-themed portfolio website.</p>
-
-                <!-- Dark Mode Toggle Switch -->
-                <div class="dark-mode-toggle">
-                    <label for="dark-mode-checkbox">Dark Mode</label>
-                    <input type="checkbox" id="dark-mode-checkbox">
-                </div>
-            </div>
-        </div>
+  <!-- macOS-like Window -->
+  <div class="window">
+    <div class="window-header">
+      <div class="window-buttons">
+        <span class="close"></span>
+        <span class="minimize"></span>
+        <span class="fullscreen"></span>
+      </div>
     </div>
-
-    <!-- Dock -->
-    <div class="dock">
-        <div class="dock-item">Finder</div>
-        <div class="dock-item">Safari</div>
-        <div class="dock-item">Terminal</div>
+    <div class="window-content">
+        <h1 style="font-size: 2rem; font-weight: lighter;">Hello!</h1>
+        <br>
+        <p>This is a work-in-progress, but I think it's good so far! 🥹</p>
+        <br>
+        <p>Check out my LinkedIn and GitHub pages below.</p>
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Footer Window -->
+  <footer class="footer-window">
+    <div class="window-header">
+      <div class="window-buttons">
+        <span class="close"></span>
+        <span class="minimize"></span>
+        <span class="fullscreen"></span>
+      </div>
+      <!-- Dark Mode Toggle in Footer -->
+      <button id="footer-theme-toggle" class="theme-toggle">🌞</button>
+    </div>
+    <div class="window-content">
+      <p>© 2024 Kyle Ginnard</p>
+      <p>Contact: <a href="mailto:kyleginnard@gmail.com">kyleginnard@gmail.com</a></p>
+      <div class="social-links">
+        <a href="https://GitHub.com/KyleGinnard" aria-label="GitHub" class="social-icon">🐙 GitHub</a>
+        <a href="https://www.linkedin.com/in/kyle-g-779904115/" aria-label="LinkedIn" class="social-icon">🔗 LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

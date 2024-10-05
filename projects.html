@@ -1,32 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyle Ginnard</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kyle's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- macOS-like Top Bar -->
+  <div class="top-bar">
     <div class="menu-bar">
-        <div class="menu-item"><a href="index.html">Home</a></div>
-        <div class="menu-item"><a href="about.html">About</a></div>
-        <div class="menu-item bold"><a href="projects.html">Projects</a></div>
-        <div class="menu-item"><a href="https://github.com/KyleGinnard">GitHub</a></div>
+      <div class="menu-item"><a href="index.html">Home</a></div>
+      <div class="menu-item"><a href="about.html">About</a></div>
+      <div class="menu-item bold"><a href="projects.html">Projects</a></div>
     </div>
-    <div class="window">
-        <div class="window-header">
-            <div class="navigation-buttons">
-                <div class="close-button"></div>
-                <div class="minimize-button"></div>
-                <div class="maximize-button"></div>
-            </div>
-        </div>
-        <div class="window-content">
-            <h1>Current projects.</h1>
-            <p>You're looking at the only project I've done. Isn't it neat? 😊</p>
-        </div>
-    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- macOS-like Window -->
+  <div class="window">
+    <div class="window-header">
+      <div class="window-buttons">
+        <span class="close"></span>
+        <span class="minimize"></span>
+        <span class="fullscreen"></span>
+      </div>
+    </div>
+    <div class="window-content">
+        <h1 style="font-size: 2rem; font-weight: lighter;">Current projects.</h1>
+        <br>
+        <p>You're looking at the only project I've done. Isn't it neat? 🥰</p>
+    </div>
+  </div>
+
+  <!-- Footer Window -->
+  <footer class="footer-window">
+    <div class="window-header">
+      <div class="window-buttons">
+        <span class="close"></span>
+        <span class="minimize"></span>
+        <span class="fullscreen"></span>
+      </div>
+      <!-- Dark Mode Toggle in Footer -->
+      <button id="footer-theme-toggle" class="theme-toggle">🌞</button>
+    </div>
+    <div class="window-content">
+      <p>© 2024 Kyle Ginnard</p>
+      <p>Contact: <a href="mailto:kyleginnard@gmail.com">kyleginnard@gmail.com</a></p>
+      <div class="social-links">
+        <a href="https://GitHub.com/KyleGinnard" aria-label="GitHub" class="social-icon">🐙 GitHub</a>
+        <a href="https://www.linkedin.com/in/kyle-g-779904115/" aria-label="LinkedIn" class="social-icon">🔗 LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
