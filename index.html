@@ -3,60 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyle Ginnard</title>
+    <title>macOS Sequoia Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Menu Bar -->
     <div class="menu-bar">
-        <div class="menu-item bold"><a href="index.html">Home</a></div>
-        <div class="menu-item"><a href="about.html">About</a></div>
-        <div class="menu-item"><a href="projects.html">Projects</a></div>
-        <div class="menu-item"><a href="https://GitHub.com/KyleGinnard">GitHub</a></div>
+        <div class="menu-item bold">File</div>
+        <div class="menu-item">Edit</div>
+        <div class="menu-item">View</div>
+        <div class="menu-item">Help</div>
     </div>
-    <div class="window">
-        <div class="window-header">
-            <div class="navigation-buttons">
-                <div class="close-button"></div>
-                <div class="minimize-button"></div>
-                <div class="maximize-button"></div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="window">
+            <div class="window-header">
+                <div class="nav-buttons">
+                    <span class="nav-button red"></span>
+                    <span class="nav-button yellow"></span>
+                    <span class="nav-button green"></span>
+                </div>
+            </div>
+            <div class="window-body">
+                <h1>Welcome to my Portfolio</h1>
+                <p>This is a macOS Sequoia-themed portfolio website.</p>
+
+                <!-- Dark Mode Toggle Switch -->
+                <div class="dark-mode-toggle">
+                    <label for="dark-mode-checkbox">Dark Mode</label>
+                    <input type="checkbox" id="dark-mode-checkbox">
+                </div>
             </div>
         </div>
-        <div class="window-content">
-            <h1>Welcome to my portfolio!</h1>
-            <p>This is a work-in-progress at the moment but I think it looks great so far! 🥹</p>
-        </div>
     </div>
-<button id="themeToggle">Toggle Dark Mode</button>
+
+    <!-- Dock -->
+    <div class="dock">
+        <div class="dock-item">Finder</div>
+        <div class="dock-item">Safari</div>
+        <div class="dock-item">Terminal</div>
+    </div>
+
     <script src="script.js"></script>
-    <script>
-    	const toggleButton = document.getElementById('themeToggle');
-
-    // Check for saved mode in localStorage
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-        document.querySelector('header').classList.add('dark-mode');
-        document.querySelectorAll('.navbar > li > a').forEach(link => {
-            link.classList.add('dark-mode');
-        });
-        document.querySelector('.content-window').classList.add('dark-mode');
-    }
-
-    toggleButton.addEventListener('click', function() {
-        // Toggle dark mode
-        document.body.classList.toggle('dark-mode');
-        document.querySelector('header').classList.toggle('dark-mode');
-        document.querySelectorAll('.navbar > li > a').forEach(link => {
-            link.classList.toggle('dark-mode');
-        });
-        document.querySelector('.content-window').classList.toggle('dark-mode');
-
-        // Save the current mode in localStorage
-        if (document.body.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
-        }
-    });
-</script>
 </body>
 </html>
