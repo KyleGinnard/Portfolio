@@ -39,10 +39,17 @@ body.dark-mode {
 
 .menu-bar .menu-item {
     margin-right: 20px;
+    color: var(--text-color);
 }
 
 .menu-bar .menu-item.bold {
     font-weight: bold;
+}
+
+/* Dark Mode Menu Bar */
+.menu-bar.dark-mode {
+    background: rgba(28, 28, 30, 0.8); /* Dark background for menu bar */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Lighter border for contrast */
 }
 
 /* Main Content */
