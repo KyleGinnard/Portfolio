@@ -1,136 +1,94 @@
-/* Global light mode styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #ffffff; /* Light background */
-    color: #000000; /* Dark text */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    background-color: #F2F2F5;
+    color: #333;
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
 }
 
-header {
-    background-color: #f0f0f0; /* Light menu bar */
-    transition: background-color 0.3s ease;
-}
-
-.navbar > li > a {
-    color: #000000; /* Light text for menu items */
-    transition: color 0.3s ease;
-}
-
-.content-window {
-    background-color: #ffffff; /* Light background for the content window */
-    color: #000000; /* Dark text */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 12px; /* Rounded corners for window */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-/* macOS control buttons */
-.window-controls {
+.menu-bar {
     display: flex;
-    gap: 8px;
-    padding: 8px;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(240, 240, 240, 0.8);
+    padding: 10px 20px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    z-index: 999;
 }
 
-.window-controls span {
+.menu-item {
+    margin-right: 20px;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.menu-item.bold {
+    font-weight: bold;
+}
+
+.window {
+    width: 800px;
+    height: 600px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 100px auto;
+    overflow: hidden;
+}
+
+.window-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ECECEC;
+    padding: 10px;
+    border-bottom: 1px solid #CCC;
+}
+
+.navigation-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.close-button, .minimize-button, .maximize-button {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    display: inline-block;
-}
-
-.red {
-    background-color: #ff605c; /* Red close button */
-}
-
-.yellow {
-    background-color: #ffbd44; /* Yellow minimize button */
-}
-
-.green {
-    background-color: #00ca4e; /* Green maximize button */
-}
-
-/* Dock at the bottom */
-.dock {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 10px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.dock img {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease;
-}
-
-.dock img:hover {
-    transform: scale(1.2); /* Zoom effect on hover */
-}
-
-/* Toggle button */
-#themeToggle {
-    background-color: #444;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    margin-right: 8px;
     cursor: pointer;
-    margin-top: 20px;
 }
 
-#themeToggle:hover {
-    background-color: #555;
+.close-button {
+    background-color: #FF5F57;
 }
 
-/* Dark mode styles */
-body.dark-mode {
-    background-color: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text */
+.minimize-button {
+    background-color: #FFBD2E;
 }
 
-header.dark-mode {
-    background-color: #1e1e1e; /* Dark menu bar */
+.maximize-button {
+    background-color: #28C940;
 }
 
-.navbar > li > a.dark-mode {
-    color: #e0e0e0; /* Light text for menu items in dark mode */
+.window-title {
+    font-size: 14px;
+    color: #555;
 }
 
-.content-window.dark-mode {
-    background-color: #1e1e1e; /* Dark background for content window */
-    color: #e0e0e0; /* Light text */
-    border: 1px solid #444444; /* Dark border */
-}
-
-/* macOS-style hover effects */
-.navbar > li > a, .dropdown li a {
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.navbar > li:hover > a, .dropdown li a:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-}
-
-/* Smooth animations for window open/close */
-.content-window {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.content-window.open {
-    transform: scale(1);
-    opacity: 1;
-}
-
-.content-window.closed {
-    transform: scale(0.95);
-    opacity: 0;
+.window-content {
+    padding: 20px;
 }
