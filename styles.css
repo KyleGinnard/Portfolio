@@ -1,93 +1,99 @@
-body {
+* {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f0f0f5;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: white;
+    color: #333;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+main {
+  background-color: #323232;
+}
+  
 .menu-bar {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background: rgba(255, 255, 255, 0.9);
+    background-color: #323232;
     padding: 10px 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    z-index: 999;
 }
 
 .menu-item {
     margin-right: 20px;
+    color: #FFFFFF;
+    font-size: 14px;
     cursor: pointer;
 }
 
-.bold {
+.menu-item.bold {
     font-weight: bold;
 }
 
-.theme-toggle {
-    margin-left: auto;
-    cursor: pointer;
-    color: #007aff;
+.window {
+    width: 800px;
+    height: 600px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 100px auto;
+    overflow: hidden;
 }
 
-.content {
-    padding: 20px;
-    text-align: center;
-}
-
-.dock {
+.window-header {
     display: flex;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.9);
+    align-items: center;
+    justify-content: space-between;
+    background-color: #323232;
     padding: 10px;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    border-bottom: 1px solid #CCC;
 }
 
-.dock-item {
-    margin: 0 10px;
-    padding: 10px 20px;
-    background: #e0e0e0;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.window-controls {
-    position: fixed;
-    top: 10px;
-    right: 10px;
+.navigation-buttons {
     display: flex;
+    align-items: center;
 }
 
-.control {
-    width: 15px;
-    height: 15px;
+.close-button, .minimize-button, .maximize-button {
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    margin-left: 5px;
+    margin-right: 8px;
     cursor: pointer;
 }
 
-.red {
-    background-color: #ff605c;
+.close-button {
+    background-color: #FF5F57;
 }
 
-.yellow {
-    background-color: #ffbd44;
+.minimize-button {
+    background-color: #FFBD2E;
 }
 
-.green {
-    background-color: #00ca4e;
+.maximize-button {
+    background-color: #28C940;
 }
 
-/* Dark Mode Styles */
-body.dark {
-    background-color: #1e1e1e;
-    color: #f0f0f5;
+.window-title {
+    font-size: 14px;
+    color: #555;
 }
 
-body.dark .menu-bar, 
-body.dark .dock {
-    background: rgba(30, 30, 30, 0.9);
+.window-content {
+    padding: 20px;
 }
