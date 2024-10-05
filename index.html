@@ -3,33 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Kyle Ginnard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="menu-bar">
-        <div class="menu-item bold">File</div>
-        <div class="menu-item">Edit</div>
-        <div class="menu-item">View</div>
-        <div class="menu-item">Help</div>
-        <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
+        <div class="menu-item bold"><a href="index.html">Home</a></div>
+        <div class="menu-item"><a href="about.html">About</a></div>
+        <div class="menu-item"><a href="projects.html">Projects</a></div>
+        <div class="menu-item"><a href="https://GitHub.com/KyleGinnard">GitHub</a></div>
     </div>
-
-    <div class="content">
-        <h1>Welcome to My Portfolio</h1>
-        <p>This is a showcase of my work.</p>
-    </div>
-
-    <div class="dock">
-        <div class="dock-item">App 1</div>
-        <div class="dock-item">App 2</div>
-        <div class="dock-item">App 3</div>
-    </div>
-
-    <div class="window-controls">
-        <div class="control red"></div>
-        <div class="control yellow"></div>
-        <div class="control green"></div>
+    <div class="window">
+        <div class="window-header">
+            <div class="navigation-buttons">
+                <div class="close-button"></div>
+                <div class="minimize-button"></div>
+                <div class="maximize-button"></div>
+            </div>
+        </div>
+        <div class="window-content">
+            <h1>Welcome to my portfolio!</h1>
+            <p>This is supposed to look like macOS. I hope I'm doing a good job? 🥹</p>
+        </div>
     </div>
 
     <script src="script.js"></script>
