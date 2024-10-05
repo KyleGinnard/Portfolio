@@ -23,10 +23,40 @@
         </div>
         <div class="window-content">
             <h1>Welcome to my portfolio!</h1>
-            <p>This is supposed to look like macOS. I hope I'm doing a good job? 🥹</p>
+            <p>This is a work-in-progress at the moment but I think it looks great so far! 🥹</p>
         </div>
     </div>
-
+<button id="themeToggle">Toggle Dark Mode</button>
     <script src="script.js"></script>
+    <script>
+    	const toggleButton = document.getElementById('themeToggle');
+
+    // Check for saved mode in localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.querySelector('header').classList.add('dark-mode');
+        document.querySelectorAll('.navbar > li > a').forEach(link => {
+            link.classList.add('dark-mode');
+        });
+        document.querySelector('.content-window').classList.add('dark-mode');
+    }
+
+    toggleButton.addEventListener('click', function() {
+        // Toggle dark mode
+        document.body.classList.toggle('dark-mode');
+        document.querySelector('header').classList.toggle('dark-mode');
+        document.querySelectorAll('.navbar > li > a').forEach(link => {
+            link.classList.toggle('dark-mode');
+        });
+        document.querySelector('.content-window').classList.toggle('dark-mode');
+
+        // Save the current mode in localStorage
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
 </body>
 </html>
