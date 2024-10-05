@@ -15,6 +15,10 @@ a {
   text-decoration: inherit;
 }
 
+main {
+  background-color: #999999;
+}
+  
 .menu-bar {
     display: flex;
     justify-content: flex-start;
