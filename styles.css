@@ -51,6 +51,14 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
+  .top-bar {
+  	 background: linear-gradient(to bottom, #f9f9f9, #ececec); /* Light mode */
+	}
+  
+	.dark-mode .top-bar {
+ 	 	 background: linear-gradient(to bottom, #2e2e2e, #1c1c1c); /* Dark mode */
+	}
+  
   .menu-bar {
     display: flex;
     padding: 0.5rem 1rem;
@@ -108,6 +116,11 @@
     height: 12px;
     border-radius: 50%;
   }
+ 
+   .window-buttons span:hover {
+   filter: brightness(0.9); /* Slight darkening on hover */
+   cursor: pointer;
+}
   
   .close {
     background-color: #ff5f57;
