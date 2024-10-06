@@ -11,3 +11,27 @@ footerThemeToggle.addEventListener('click', () => {
     footerThemeToggle.textContent = '🌞'; // Sun icon for light mode
   }
 });
+// Functionality for opening modals
+const modals = document.querySelectorAll('.modal');
+const buttons = document.querySelectorAll('.view-details');
+const closes = document.querySelectorAll('.close');
+
+buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        modals[index].style.display = 'block';
+    });
+});
+
+closes.forEach((close, index) => {
+    close.addEventListener('click', () => {
+        modals[index].style.display = 'none';
+    });
+});
+
+window.addEventListener('click', (event) => {
+    modals.forEach((modal) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
