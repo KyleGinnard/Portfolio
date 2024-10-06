@@ -1,63 +1,182 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
-}
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    font-weight: lighter;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: inherit;
 
-header {
-    background-color: #333;
-}
-
-.navbar {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-}
-
-.navbar > li {
-    float: left;
-}
-
-.navbar > li > a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.toggle-button {
-    font-size: 30px;
-    cursor: pointer;
+  }
+  /* Variables for light and dark mode */
+  :root {
+    --background-color: #eaeaea; /* Light mode background */
+    --text-color: #000; /* Light mode text color */
+    --footer-background: #f1f1f1; /* Light mode footer background */
+    --footer-text-color: #666; /* Light mode footer text color */
+    --link-color: #0073e6; /* Light mode link color */
+    --window-background: #f1f1f1; /* Light mode content window background */
+  }
+  
+  .dark-mode {
+    --background-color: #1e1e1e; /* Dark mode background */
+    --text-color: #bbb; /* Dark mode text color */
+    --footer-background: #333; /* Dark mode footer background */
+    --footer-text-color: #bbb; /* Dark mode footer text color */
+    --link-color: #66b3ff; /* Dark mode link color */
+    --window-background: #333; /* Dark mode content window background */
+  }
+  
+  /* Fixed macOS-like Top Bar */
+  .top-bar {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333;
-    color: white;
-    border: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it is above other elements */
+    background-color: var(--window-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-bar {
+    display: flex;
+    padding: 0.5rem 1rem;
+  }
+  
+  .menu-item {
+    margin-right: 1rem;
+    color: var(--text-color);
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  /* macOS-like Window */
+  .window, .footer-window {
+    margin: 5rem auto 2rem; /* Add margin to account for fixed top bar */
+    width: 80%;
+    max-width: 1000px;
+    min-height: 400px; /* Set a minimum height for both windows */
+    background-color: var(--window-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.4s ease;
+  }
+  
+  /* Common Styles for Window Content */
+  .window-content, .footer-window .window-content {
+    padding: 1.5rem; /* Padding for both windows */
+    text-align: center; /* Center align text for both windows */
+    font-size: 1.2rem; /* Adjust font size to match footer */
+    color: var(--text-color); /* Ensure text color matches */
+    font-weight: lighter;
+  }
+  
+  .window-header, .footer-window .window-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--window-header-background);
+    padding: 0.5rem 1rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: background-color 0.4s ease;
+  }
+  
+  .window-buttons, .footer-window .window-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .window-buttons span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    padding: 10px;
-}
-
-.content-window {
-    display: none; /* Hide content window initially */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    z-index: 1000; /* Ensure it appears above other content */
-}
-
-#closeButton {
-    cursor: pointer;
-    background-color: #ff4c4c;
-    color: white;
+  }
+  
+  .close {
+    background-color: #ff5f57;
+  }
+  
+  .minimize {
+    background-color: #ffbd2e;
+  }
+  
+  .fullscreen {
+    background-color: #28c840;
+  }
+  
+  /* Footer Window Positioning */
+  .footer-window {
+    margin-top: 8rem;
+    background-color: var(--footer-background);
+    padding-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    min-height: 100px;
+  }
+  
+  .footer-window .window-content {
+    padding: 2.5rem;
+  }
+  
+  .footer-window p {
+    color: var(--footer-text-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-window a {
+    color: var(--link-color);
+    text-decoration: none;
+  }
+  
+  .footer-window a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Clean Social Links */
+  .social-links {
+    margin-top: 1rem;
+  }
+  
+  .social-icon {
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: var(--link-color);
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: var(--text-color);
+  }
+  
+  /* Footer Dark Mode Toggle Button */
+  .theme-toggle {
+    background: none;
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.4s ease, transform 0.2s ease;
+  }
+  
+  .theme-toggle:hover {
+    transform: scale(1.2);
+  }
+  

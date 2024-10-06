@@ -1,12 +1,13 @@
-// Add functionality to the window buttons if needed.
-document.querySelector('.close-button').addEventListener('click', () => {
-    alert('Window closed!');
-});
+const footerThemeToggle = document.getElementById('footer-theme-toggle');
+const body = document.body;
 
-document.querySelector('.minimize-button').addEventListener('click', () => {
-    alert('Window minimized!');
-});
-
-document.querySelector('.maximize-button').addEventListener('click', () => {
-    alert('Window maximized!');
+footerThemeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  
+  // Update icon based on the current mode
+  if (body.classList.contains('dark-mode')) {
+    footerThemeToggle.textContent = '🌙'; // Moon icon for dark mode
+  } else {
+    footerThemeToggle.textContent = '🌞'; // Sun icon for light mode
+  }
 });
