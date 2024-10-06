@@ -184,71 +184,46 @@
   .theme-toggle:hover {
     transform: scale(1.2);
   }
-.content-window {
-    background: #f9f9f9; /* Light background for content windows */
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0; /* Margin for separation */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.top-content {
-    margin-bottom: 20px; /* Additional space below the top content window */
-}
-
-.folder-container {
+.card-container {
     display: flex;
-    gap: 20px; /* Space between folder icons */
-    flex-wrap: wrap; /* Wrap icons if needed */
+    gap: 20px; /* Space between cards */
+    flex-wrap: wrap; /* Wrap cards if they don't fit in one line */
+    justify-content: center; /* Center the cards in the container */
+    margin-top: 10px; /* Space above the cards */
 }
 
-.folder {
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s;
+.card {
+    background-color: #fff;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 15px;
+    width: 220px; /* Fixed width for cards */
+    text-align: center; /* Center text inside the card */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animation on hover */
 }
 
-.folder:hover {
-    transform: scale(1.05); /* Slight scaling on hover */
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
 }
 
-.folder-icon {
-    width: 60px; /* Adjust size of the folder icon */
-    height: auto;
+.project-image {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
 }
 
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+.view-button {
+    display: inline-block;
+    margin-top: 10px; /* Space above the button */
+    padding: 8px 12px; /* Padding for button */
+    background-color: #007aff; /* macOS blue color */
+    color: white;
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners for button */
+    transition: background-color 0.2s; /* Animation on hover */
 }
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.view-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
