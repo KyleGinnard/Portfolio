@@ -192,35 +192,3 @@
   .theme-toggle:hover {
     transform: scale(1.2);
   }
-  .terminal-window {
-    background-color: #1e1e1e;
-    color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 20px 0;
-    height: 300px; /* Adjust this based on your layout */
-    overflow-y: auto;
-    font-family: monospace;
-	}
-
-	.terminal-input {
-    width: 100%;
-    padding: 10px;
-    background-color: #111;
-    border: none;
-    color: #fff;
-    font-family: monospace;
-    font-size: 14px;
-	}
-
-	.terminal-output {
-    height: 240px;
-    overflow-y: auto;
-    margin-bottom: 10px;
-	}
-
-	.terminal-output p {
-    margin: 5px 0;
-    white-space: pre-wrap;
-	}
-  
